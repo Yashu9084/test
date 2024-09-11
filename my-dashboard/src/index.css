@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.status-pending {
+  color: red;
+}
+
+.status-completed {
+  color: green;
+}
