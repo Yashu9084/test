@@ -1,26 +1,25 @@
-import React from 'react';
-import { Layout, Menu } from 'antd';
-import { HomeOutlined, UserOutlined } from '@ant-design/icons';
-import 'antd/dist/reset.css'; // Ant Design styles
-import Home from '../pages/Home';
-import Navbar from '../components/Navbar';
+import React from "react";
+import { Layout, Menu } from "antd";
+import { HomeOutlined, UserOutlined } from "@ant-design/icons";
+import "antd/dist/reset.css"; // Ant Design styles
+import Navbar from "../components/Navbar.jsx";
 
 const { Sider, Content } = Layout;
 
 const withSidebar = (WrappedComponent) => {
   return (props) => (
-    <Layout style={{ minHeight: '100vh' }}>
+    <Layout style={{ minHeight: "100vh" }}>
       <Sider width={200} className="site-layout-background">
         <Menu
           mode="inline"
-          defaultSelectedKeys={['1']}
-          style={{ height: '100%', borderRight: 0 }}
+          defaultSelectedKeys={["1"]}
+          style={{ height: "100%", borderRight: 0 }}
         >
-        <Menu.Item key="1" icon={<HomeOutlined />}>
-          Dashboard
+          <Menu.Item key="1" icon={<HomeOutlined />}>
+            Dashboard
           </Menu.Item>
           <Menu.Item key="2" icon={<HomeOutlined />}>
-         Home
+            Home
           </Menu.Item>
           <Menu.Item key="3" icon={<UserOutlined />}>
             Users
@@ -32,8 +31,8 @@ const withSidebar = (WrappedComponent) => {
         </Menu>
       </Sider>
       <Layout>
-        <Content style={{ padding: '0 24px', minHeight: 280 }}>
-          <Navbar/>
+        <Content style={{ padding: "0 24px", minHeight: 280 }}>
+          <Navbar />
           <WrappedComponent {...props} />
         </Content>
       </Layout>

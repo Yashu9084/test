@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { Tabs } from 'antd';
-import withSidebar from '../HOC/withSidebar';
+import withSidebar from '../HOC/withSidebar.jsx';
 import UserTable from '../components/UserTable';
-import Navbar from '../components/Navbar';
 
 const { TabPane } = Tabs;
 
