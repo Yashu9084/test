@@ -1,34 +1,57 @@
 import React from 'react';
-import { Table } from 'antd';
+import { Table, Tag } from 'antd';
 
-const UserTable = () => {
-  const dataSource = [
-    {
-      key: '1',
-      name: 'John Brown',
-      status: 'Pending',
-    },
-    {
-      key: '2',
-      name: 'Jim Green',
-      status: 'Completed',
-    },
-    // Add more data as needed
-  ];
-
+const UserTable = ({ dataSource }) => {
   const columns = [
+    {
+      title: 'Order ID',
+      dataIndex: 'orderID',
+      key: 'orderID',
+    },
     {
       title: 'Name',
       dataIndex: 'name',
       key: 'name',
     },
     {
+      title: 'Service',
+      dataIndex: 'service',
+      key: 'service',
+    },
+    {
+      title: 'Amount',
+      dataIndex: 'amount',
+      key: 'amount',
+    },
+    {
+      title: 'Date',
+      dataIndex: 'date',
+      key: 'date',
+    },
+    {
       title: 'Status',
       dataIndex: 'status',
       key: 'status',
-      render: (text) => (
-        <span className={`status-${text.toLowerCase()}`}>{text}</span>
-      ),
+      render: (status) => {
+        let color;
+        switch (status) {
+          case 'Pending':
+            color = 'gold';
+            break;
+          case 'Completed':
+            color = 'green';
+            break;
+          case 'Rejected':
+            color = 'red';
+            break;
+          case 'Cancelled':
+            color = 'volcano';
+            break;
+          default:
+            color = 'gray';
+        }
+        return <Tag color={color}>{status}</Tag>;
+      },
     },
   ];
 

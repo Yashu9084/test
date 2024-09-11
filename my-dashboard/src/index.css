@@ -9,3 +9,28 @@
 .status-completed {
   color: green;
 }
+
+.navbar {
+  width: 100%;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.searchbar {
+  width: 200%;
+  position: relative;
+}
+
+.search-icon {
+  position: absolute;
+  left: 235%;
+  top: 40%;
+}
+
+.input-box {
+  width: 250%;
+  padding:10px;
+  border: none;
+}
